@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/cc77a623f7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Sanculator</title>
+</head>
+
+<body>
+    <nav style="-webkit-app-region: drag">
+        <ul class="flex-container">
+            <li class="flex-item left">
+                <p href=""><img draggable="false" src="Sanculator.svg"></p>
+            </li>
+            <li class="flex-item right">
+                <button id="discordA" data-tooltip="Erato#5595" style="-webkit-app-region: no-drag"
+                    data-tooltip-conf="bottom"><i class="fab fa-discord"></i></button>
+                <button style="-webkit-app-region: no-drag" id="appMin"><i class="far fa-minus"></i></button>
+                <button style="-webkit-app-region: no-drag" id="appFull"><i class="far fa-expand"></i></button>
+                <button style="-webkit-app-region: no-drag" id="appClose"><i class="far fa-times"></i></button>
+            </li>
+        </ul>
+    </nav>
+    <h1 class="by">Code by Erato</h1>
+    <script>
+        const { ipcRenderer } = require("electron")
+
+        const closebutton = document.getElementById("appClose")
+        const minbutton = document.getElementById("appMin")
+        const fullbutton = document.getElementById("appFull")
+
+        minbutton.addEventListener("click", e => {
+            ipcRenderer.send("key:appMin", "min")
+        })
+
+        closebutton.addEventListener("click", e => {
+            ipcRenderer.send("key:appClose", "close")
+        })
+
+        fullbutton.addEventListener("click", e => {
+            ipcRenderer.send("key:appFull", "full")
+        })
+    </script>
+</body>
+
+</html>

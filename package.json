@@ -1,0 +1,17 @@
+{
+  "name": "sanculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "compile:sass": "node-sass sass/main.scss css/main.css -w"
+  },
+  "keywords": [],
+  "author": "Erato",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^13.1.1",
+    "node-sass": "^6.0.0"
+  }
+}
